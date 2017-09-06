@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="smoothscroll.js"></script>
+    <title>Tech</title>
+    <link rel="stylesheet" type="text/css" href="tech.css">
+</head>
+<title></title>
+<style>
+    img {
+        width: 759px;
+        height: 450px;
+        box-shadow: 6px 2px 6px black;
+    }
+
+</style>
+
+<body onload="autoRun()">
+    <img src="will_code_quote.jpg" id="slideshow">
+    <br>
+
+    <div id="caption">will.i.am</div>
+               
+    <div class="topnav" id="myTopnav">
+        <a href="#HOME" class="smoothScroll">HOME</a>
+        <a href="#HIPHOP" class="smoothScroll">HIPHOP + TECH</a>
+        <a href="#ATHLETES" class="smoothScroll">ATHLETES + TECH</a>
+        <a href="#SLIDESHOW" class="smoothScroll">SLIDESHOW</a>
+        <a href="#CONTACT" class="smoothScroll">CONTACT US</a>
+    </div>
+
+    <div id="HOME">
+        <video class="video-background" width="100%" height="840px" autoplay=true src="video.mp4"></video>
+    </div>
+
+    <div id="HIPHOP" class="hiphop">
+        <div class="hiphop_bg">
+
+
+        </div>
+    </div>
+
+    <div id="ATHLETES"></div>
+
+    <div id="SLIDESHOW">
+        <div id="slide_canvass">
+            
+            
+        </div>
+
+
+    </div>
+
+    <div id="CONTACT"></div>
+
+    <script src="dummy_slideshow.js">
+        var images = ["will_code_quote.jpg", "nas_tech_queens.jpg", "mcHammer.png"];
+
+        var caption = ["WILL.I.AM", "NAS", "McHAMMER"];
+
+        var imageNumber = 0;
+        var imageLength = images.length - 1;
+
+        //function sayz when i reach end of array, start over//
+        function changeImage(x) {
+            imageNumber += x;
+
+            if (imageNumber > imageLength) {
+                imageNumber = 0;
+            }
+            if (imageNumber < 0) {
+                imageNumber = imageLength;
+            }
+
+            document.getElementById("slideshow").src = images[imageNumber];
+
+            document.getElementById("caption").innerHTML = caption[imageNumber];
+
+            return false;
+        }
+
+        function autoRun() {
+            setInterval(changeImage, 5000, 1);
+        }
+
+    </script>
+</body>
+
+</html>
